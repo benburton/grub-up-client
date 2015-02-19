@@ -1,11 +1,17 @@
 'use strict';
 
-angular.module('grubUpClientApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+angular.module('grubUpClientApp').controller('MainCtrl', [
+  '$scope',
+  'MealService',
+  function($scope, MealService) {
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
+    MealService.getMeals(function(meals) {
+      $scope.meals = meals;
     });
 
-  });
+    $scope.showMeal = function(meal) {
+      window.alert('This would show a ' + meal.toLowerCase() + ' meal!');
+    };
+
+  }
+]);
