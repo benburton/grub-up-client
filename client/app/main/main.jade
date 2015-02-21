@@ -1,8 +1,10 @@
-.header
-  map#hero-map(center="[40.44, -79.95]", zoom="13")
-    marker(ng-repeat="marker in markers", position="marker.position")
-  .container
-    .header-row
-      hgroup
-        img(src='assets/images/logo.png')
-        h1 Grub Up
+.header-container.container
+  .header-row
+    hgroup
+      img(src='assets/images/logo.png')
+      h1 Grub Up
+map#hero-map(center="[40.44, -79.95]", zoom="13")
+  marker(ng-repeat="marker in markers", position="marker.position")
+
+.body-container.container
+  p Blah blah blah
