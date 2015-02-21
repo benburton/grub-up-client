@@ -1,8 +1,8 @@
-.container
-  hgroup
-    img(src='assets/images/logo.png')
-    h1 Grub Up
-
-  ul
-    li(ng-repeat='location in locations')
-      a(ng-click='showLocation(location)') {{location.name}}
+.header
+  map#hero-map(center="[40.44, -79.95]", zoom="13")
+    marker(ng-repeat="marker in markers", position="marker.position")
+  .container
+    .header-row
+      hgroup
+        img(src='assets/images/logo.png')
+        h1 Grub Up
