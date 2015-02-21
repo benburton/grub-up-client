@@ -8,7 +8,8 @@
         input.search-field(type='text', placeholder='zip code', ng-model-options="{ debounce: 500 }", ng-model='zip')
 
 map#hero-map(center="[{{lat}}, {{long}}]", zoom="13")
-  marker(ng-repeat="marker in markers", position="marker.position")
+  marker(ng-repeat="marker in markers", position="marker.position" ng-click="showLocation(location)")
 
-.body-container.container
-  p Blah blah blah
+.body-container
+  .container
+    p This is cool copy that Anastasia wanted.
