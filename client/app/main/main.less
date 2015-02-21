@@ -1,3 +1,7 @@
+@tango: #f37420;
+@yellow: #ffc43a;
+@grey: #a7a9ab;
+
 * {
   box-sizing: border-box;
 }
@@ -26,7 +30,7 @@ a {
 }
 
 .search {
-  padding: 50px 0;
+  padding: 20px 0;
 
   .search-field {
     width: 200px;
@@ -34,15 +38,59 @@ a {
     padding: 10px;
     border-radius: 4px;
     font-size: 20px;
+    float: right;
+    border: 1px solid @grey;
   }
 
 }
 
+nav {
+  font-family: "museo-slab",serif;
+  float: right;
+  clear: right;
+  margin-top: 10px;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style-type: none;
+      display: inline-block;
+      margin-right: 1em;
+      a {
+        background-color: @tango;
+        padding: .5em 1em;
+        color: #FFF;
+        border-radius: 5px;
+        display: block;
+        &:hover {
+          color: #FFF;
+          text-decoration: none;
+          background-color: @yellow;
+          transition-duration: 2s;
+        }
+      }
+    }
+  }
+}
+
 .body-container {
   padding: 20px 0;
-  background-color: #fec62c;
+  background-color: @grey;
   color: #ffffff;
   font-size: 20px;
+}
+
+.locations {
+  h2 {
+    margin: 0;
+  }
+  button {
+    background-color: #FFF;
+    color: @grey;
+    padding: 15px 10px;
+    border-radius: 10px;
+    border: none;
+  }
 }
 
 .location-popout {
@@ -71,4 +119,8 @@ a {
     padding: 0;
   }
 
+}
+
+footer {
+  padding: 1em 0;
 }

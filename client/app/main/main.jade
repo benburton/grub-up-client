@@ -1,11 +1,16 @@
 .header-container.container
   .header-row
-    .col-xs-4.logo
+    .col-xs-12.col-sm-8.col-lg-3.col-md-6.logo
       h1
         img.logo(src='assets/images/logo.svg', alt="#grubup")
-    .col-xs-8.search
-      .pull-right
-        input.search-field(type='text', placeholder='zip code', ng-model-options="{ debounce: 500 }", ng-model='zip')
+    .col-xs-9.search
+      input.search-field(type='text', placeholder='zip code', ng-model-options="{ debounce: 500 }", ng-model='zip')
+      nav
+        ul
+          li  
+            a Location
+          li
+            a Menu
 
 #hero-map
   location-popout(location='selectedLocation')
@@ -14,4 +19,26 @@
 
 .body-container
   .container
-    p This is cool copy that Anastasia wanted!
+    section
+      .locations.col-lg-12
+        .col-lg-3
+          h2 Shadyside Boys & Girls
+        .col-lg-7
+          span 6 Brownell Place • Pittsburgh, PA 15232
+        .col-lg-2
+          button Get Directions
+      .locations.col-lg-12
+        .col-lg-3
+          h2 Shadyside Boys & Girls
+        .col-lg-7
+          span 6 Brownell Place • Pittsburgh, PA 15232
+        .col-lg-2
+          button Get Directions
+footer.col-lg-12
+  .container
+    .col-lg-12
+      span Main Office
+      br
+      span 5344 Second Ave.
+      br
+      span 412-422-6401
