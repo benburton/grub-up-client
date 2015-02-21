@@ -18,15 +18,12 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
     });
 
     LocationService.getLocations(function(locations) {
-      $scope.dynMarkers = _.map(locations, function(location, index) {
-        var marker = new google.maps.Marker({
-          title: location.name
-        });
-        marker.setPosition(new google.maps.LatLng(location.lat, location.long));
-        marker.setMap($scope.map);
-        return marker;
+      $scope.markers = _.map(locations, function(location, index) {
+        return {
+          position: [location.lat, location.long],
+          location: location
+        };
       });
-
     });
 
     $scope.$watch('zip', function(val) {
@@ -37,8 +34,12 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
       }
     });
 
-    $scope.showLocation = function(location) {
-      console.log(location);
+    $scope.showLocation = function(index, data) {
+      if ($scope.selectedLocation === data.location) {
+        $scope.selectedLocation = undefined;
+      } else {
+        $scope.selectedLocation = data.location;
+      }
     };
 
     $scope.geoCode = function(input) {

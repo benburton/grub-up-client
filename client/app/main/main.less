@@ -16,8 +16,13 @@ a {
 }
 
 #hero-map {
-  height: 600px;
-  width: 100%;
+  position: relative;
+
+  .map {
+    height: 600px;
+    width: 100%;
+    z-index: -1;
+  }
 }
 
 .search {
@@ -40,3 +45,30 @@ a {
   font-size: 20px;
 }
 
+.location-popout {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  background: #f47921;
+  width: 0;
+  opacity: 0;
+  transition: width 400ms ease;
+  color: #ffffff;
+
+  &.expanded {
+    width: 400px;
+    opacity: 1;
+    padding: 20px;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  .address {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+}
