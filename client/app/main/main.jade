@@ -3,7 +3,7 @@
     hgroup
       img(src='assets/images/logo.png')
       h1 Grub Up
-map#hero-map(center="[40.44, -79.95]", zoom="13")
+map#hero-map(center="current-location" geo-fallback-center="40.44 -79.95", zoom="13")
   marker(ng-repeat="marker in markers", position="marker.position")
 
 .body-container.container
