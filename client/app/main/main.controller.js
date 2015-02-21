@@ -44,6 +44,16 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
       }
     };
 
+    $scope.$watch('selectedLocation', function() {
+      if ($scope.selectedLocation) {
+        $scope.mapClass = 'col-xs-12 col-md-8 col-lg-9 pull-right';
+        $scope.popoutClass = 'col-xs-12 col-md-4 col-lg-3';
+      } else {
+        $scope.mapClass = 'col-xs-12';
+        $scope.popoutClass = 'hidden';
+      }
+    });
+
     $scope.geoCode = function(input) {
       LocationService.latLongFromZip(input, function(lat, long) {
         $scope.lat = lat;

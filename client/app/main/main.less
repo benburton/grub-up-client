@@ -20,13 +20,39 @@ a {
 }
 
 #hero-map {
-  position: relative;
+  width: 100%;
+  height: 600px;
+  background: #f47921;
 
   .map {
     height: 600px;
-    width: 100%;
-    z-index: -1;
+    padding: 0;
   }
+
+  .location-popout {
+    color: #ffffff;
+    background: #f47921;
+
+    &.hidden {
+      width: 0;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    .address {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hours {
+      text-transform: lowercase;
+    }
+
+  }
+
 }
 
 .search {
@@ -124,3 +150,4 @@ nav {
 footer {
   padding: 1em 0;
 }
+

@@ -13,8 +13,8 @@
             a Menu
 
 #hero-map
-  location-popout(location='selectedLocation')
-  map.map(center="[{{lat}}, {{long}}]", zoom="13", scrollwheel="false", draggable="{{draggable}}")
+  location-popout(location='selectedLocation', class="{{popoutClass}}")
+  map.map(center="[{{lat}}, {{long}}]", zoom="13", scrollwheel="false", draggable="{{draggable}}", class="{{mapClass}}")
     marker(ng-repeat="marker in markers", position="{{marker.position}}", on-click="showLocation(marker, $index)")
 
 .body-container
