@@ -3,9 +3,6 @@
     img(src='assets/images/logo.png')
     h1 Grub Up
 
-  p This is a placeholder app for our CodeFest 2015 "Grub Up" project for CitiParks.
-  p Within this app, people may find resources for meals such as:
-
   ul
-    li(ng-repeat='meal in meals')
-      a(ng-click='showMeal(meal)') {{meal}}
+    li(ng-repeat='location in locations')
+      a(ng-click='showLocation(location)') {{location.name}}

@@ -2,15 +2,15 @@
 
 angular.module('grubUpClientApp').controller('MainCtrl', [
   '$scope',
-  'MealService',
-  function($scope, MealService) {
+  'LocationService',
+  function($scope, LocationService) {
 
-    MealService.getMeals(function(meals) {
-      $scope.meals = meals;
+    LocationService.getLocations(function(locations) {
+      $scope.locations = locations;
     });
 
-    $scope.showMeal = function(meal) {
-      window.alert('This would show a ' + meal.toLowerCase() + ' meal!');
+    $scope.showLocation = function(location) {
+      console.log(location);
     };
 
   }
