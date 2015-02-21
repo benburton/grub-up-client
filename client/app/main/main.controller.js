@@ -5,9 +5,8 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
   '$timeout',
   'LocationService',
   function($scope, $timeout, LocationService) {
-    var map;
-    $scope.$on('mapInitialized', function(e, evtMap) {
-      map = evtMap;
+    $scope.$on('mapInitialized', function(event, map) {
+      $scope.map = map;
     });
 
     LocationService.getLocations(function(locations) {
@@ -20,7 +19,7 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
           title: location.name
         });
         marker.setPosition(new google.maps.LatLng(location.lat, location.long));
-        marker.setMap(map);
+        marker.setMap($scope.map);
         return marker;
       });
 
