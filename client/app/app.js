@@ -16,7 +16,7 @@ angular.module('grubUpClientApp', [
 
   $locationProvider.html5Mode(true);
 }).run(function($httpBackend) {
-  $httpBackend.whenGET(/.*\.html/).passThrough();
+  $httpBackend.whenGET(/.*\.html|.*googleapis.*/).passThrough();
 
   $httpBackend.whenGET('meals/location').respond([
     {

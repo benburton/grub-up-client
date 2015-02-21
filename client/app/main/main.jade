@@ -5,10 +5,9 @@
         img.logo(src='assets/images/logo.svg', alt="#grubup")
     .col-xs-8.search
       .pull-right
-        input.search-field(type='text', placeholder='zip code')
-        input.search-button(type='submit', value='Go')
+        input.search-field(type='text', placeholder='zip code', ng-model-options="{ debounce: 500 }", ng-model='zip')
 
-map#hero-map(center="current-location" geo-fallback-center="40.44 -79.95", zoom="13")
+map#hero-map(center="[{{lat}}, {{long}}]", zoom="13")
   marker(ng-repeat="marker in markers", position="marker.position")
 
 .body-container.container

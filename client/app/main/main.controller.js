@@ -6,15 +6,18 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
   'LocationService',
   function($scope, $timeout, LocationService) {
 
+    var defaultCoords = [40.44, -79.95];
+
+    $scope.setDefaults = function() {
+      $scope.lat = defaultCoords[0];
+      $scope.long = defaultCoords[1];
+    };
+
     $scope.$on('mapInitialized', function(event, map) {
       $scope.map = map;
     });
 
     LocationService.getLocations(function(locations) {
-      function locationToPosition(location) {
-        return '[' + location.lat.toFixed(2) + ',' + location.long.toFixed(2) + ']';
-      }
-
       $scope.dynMarkers = _.map(locations, function(location, index) {
         var marker = new google.maps.Marker({
           title: location.name
@@ -26,11 +29,31 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
 
     });
 
+    $scope.$watch('zip', function(val) {
+      if (_.isEmpty(val)) {
+        $scope.setDefaults();
+      } else {
+        $scope.geoCode(val);
+      }
+    });
+
     $scope.showLocation = function(location) {
       console.log(location);
     };
 
-    $scope.dynMarkers = [];
+    $scope.geoCode = function(input) {
+      LocationService.latLongFromZip(input, function(lat, long) {
+        $scope.lat = lat;
+        $scope.long = long;
+      });
+    };
+
+    $scope.init = function() {
+      $scope.dynMarkers = [];
+      $scope.setDefaults();
+    };
+
+    $scope.init();
 
   }
 ]);
