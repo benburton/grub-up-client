@@ -8,6 +8,8 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
 
     var defaultCoords = [40.44, -79.95];
 
+    $scope.draggable = !Modernizr.touch;
+
     $scope.setDefaults = function() {
       $scope.lat = defaultCoords[0];
       $scope.long = defaultCoords[1];
