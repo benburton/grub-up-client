@@ -7,9 +7,11 @@
       .pull-right
         input.search-field(type='text', placeholder='zip code', ng-model-options="{ debounce: 500 }", ng-model='zip')
 
-map#hero-map(center="[{{lat}}, {{long}}]", zoom="13")
-  marker(ng-repeat="marker in markers", position="marker.position" ng-click="showLocation(location)")
+#hero-map
+  location-popout(location='selectedLocation')
+  map.map(center="[{{lat}}, {{long}}]", zoom="13")
+    marker(ng-repeat="marker in markers", position="{{marker.position}}", on-click="showLocation(marker, $index)")
 
 .body-container
   .container
-    p This is cool copy that Anastasia wanted.
+    p This is cool copy that Anastasia wanted!
