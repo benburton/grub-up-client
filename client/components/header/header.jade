@@ -1,10 +1,10 @@
 .header-container.container(ng-controller='HeaderCtrl')
   .header-row
-    .col-xs-12.col-sm-8.col-lg-3.col-md-6.logo
+    .col-xs-6.col-sm-6.col-md-4.col-lg-3.logo
       h1
         a(href='/')
           img.logo(src='assets/images/logo.svg', alt="#grubup")
-    .col-xs-9.search
+    .col-xs-6.col-sm-6.col-md-8.col-lg-9.search
       input.search-field(type='text', placeholder='zip code', ng-model-options="{ debounce: 500 }", ng-model='zip', ng-show='showSearch')
       nav
         ul
