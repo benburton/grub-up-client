@@ -12,13 +12,17 @@ footer
             br
             span Pittsburgh, PA 15207
         .col-lg-8.col-md-6.contact
-          h3 Send Us Your Questions:
-          .name
-            label Your name:
-            input(type="text")
-          .email    
-            label Your email:
-            input(type="text")
-          .message
-            label Message:
-            textarea(rows="8")
+          section.contact
+            form
+              h3 Send Us Your Questions:
+              .name
+                label Your name:
+                input(type="text")
+              .email    
+                label Your email:
+                input(type="text")
+              .message
+                label Message:
+                textarea(rows="8")
+              .submit
+                input(type="submit" value="Submit")
