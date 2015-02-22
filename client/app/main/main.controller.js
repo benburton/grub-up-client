@@ -1,10 +1,13 @@
 'use strict';
 
 angular.module('grubUpClientApp').controller('MainCtrl', [
+  '$rootScope',
   '$scope',
   '$timeout',
   'LocationService',
-  function($scope, $timeout, LocationService) {
+  function($rootScope, $scope, $timeout, LocationService) {
+
+    $rootScope.showSearch = true;
 
     var defaultCoords = [40.44, -79.95];
 
