@@ -25,9 +25,9 @@
           .col-lg-3.col-md-3
             h2 Inner City Ministries
           .col-lg-7.col-md-6
-            span 2643 East Liberty Blvd • Pittsburgh, PA 15206
+            span.adr 2643 East Liberty Blvd • Pittsburgh, PA 15206
             br
-            span Distance: 1.7mi
+            span.dstnc Distance: 1.7mi
           .col-lg-2.col-md-3
             button Get Directions
       .row
@@ -35,9 +35,9 @@
           .col-lg-3
             h2 Paulson Rec Center
           .col-lg-7
-            span 1201 Paulson Avenue • Pittsburgh, PA 15206
+            span.adr 1201 Paulson Avenue • Pittsburgh, PA 15206
             br
-            span Distance: 1.7mi
+            span.dstnc Distance: 1.7mi
           .col-lg-2
             button Get Directions
       .row
@@ -45,9 +45,9 @@
           .col-lg-3.col-md-3
             h2 Sixth Mt. Zion Church
           .col-lg-7.col-md-6
-            span 6556 Shetland Avenue • Pittsburgh, PA 15206
+            span.adr 6556 Shetland Avenue • Pittsburgh, PA 15206
             br
-            span Distance: 1.7mi
+            span.dstnc Distance: 1.7mi
           .col-lg-2.col-md-3
             button Get Directions
       .row
@@ -55,9 +55,9 @@
           .col-lg-3.col-md-3
             h2 Valley View Presbyterian
           .col-lg-7.col-md-6
-            span 604 N. Aiken Avenue • Pittsburgh, PA 15206
+            span.adr 604 N. Aiken Avenue • Pittsburgh, PA 15206
             br
-            span Distance: 1.7mi
+            span.dstnc Distance: 1.7mi
           .col-lg-2.col-md.3
             button Get Directions
       .row
@@ -65,9 +65,9 @@
           .col-lg-3
             h2 Hazelwood - BJWL
           .col-lg-7
-            span 944 Johnston Avenue • Pittsburgh, PA 15207
+            span.adr 944 Johnston Avenue • Pittsburgh, PA 15207
             br
-            span Distance: 1.8mi
+            span.dstnc Distance: 1.8mi
           .col-lg-2
             button Get Directions
 section.text-message
@@ -80,12 +80,15 @@ footer
   .container
     .row
       .col-lg-12
-        img.cp-logo(src='assets/images/citiparks-logo.svg', alt="Citiparks Logo")
-        p
-          span Main Office:
-          br
-          span 412.422.6401
-        p
-          span 5344 Second Ave.
-          br
-          span Pittsburgh, PA 15207
+        .col-lg-4
+          img.cp-logo(src='assets/images/citiparks-logo.svg', alt="Citiparks Logo")
+          .org
+            h4 Main Office:
+            span.tel 412.422.6401
+          .adr
+            span 5344 Second Ave.
+            br
+            span Pittsburgh, PA 15207
+        .col-lg-8
+          label Send Us Your Questions:
+          textarea(rows="8" cols="75")
