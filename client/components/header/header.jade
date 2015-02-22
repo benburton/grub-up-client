@@ -8,7 +8,7 @@
       input.search-field(type='text', placeholder='zip code', ng-model='zip')
       button(ng-click='submit()') Submit
 
-    nav
+    nav(ng-class="{'without-search': showSearch == false}")
       ul
         li
           a(href='/locations') locations
