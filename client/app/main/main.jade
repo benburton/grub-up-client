@@ -1,16 +1,4 @@
-.header-container.container
-  .header-row
-    .col-xs-12.col-sm-8.col-lg-3.col-md-6.logo
-      h1
-        img.logo(src='assets/images/logo.svg', alt="#grubup")
-    .col-xs-9.search
-      input.search-field(type='text', placeholder='zip code', ng-model-options="{ debounce: 500 }", ng-model='zip')
-      nav
-        ul
-          li  
-            a location
-          li
-            a menu
+div(ng-include='"components/header/header.html"')
 
 #hero-map
   location-popout(location='selectedLocation', class="{{popoutClass}}")
