@@ -1,0 +1,35 @@
+.locations {
+
+  .header {
+    color: #f47921;
+    text-align: center;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .location {
+    display: block;
+    color: #f47921;
+    clear: both;
+    border-bottom: 1px solid #dbe3e4;
+
+    &:before,
+    &:after {
+      display: table;
+      line-height: 0;
+      content: "";
+    }
+
+    & > div {
+      margin: 14px 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+}

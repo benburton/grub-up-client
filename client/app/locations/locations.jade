@@ -1,5 +1,12 @@
 div(ng-include='"components/header/header.html"')
-.container
-  .col-xs-12
-    h1(style='margin: 60px 0') Aren't locations <em>the absolute best?!</em>
+
+.locations.container
+  .col-xs-12.header
+    h1 Grub Up Locations:
+
+  ul
+    li.location(ng-repeat='location in locations')
+      .col-xs-12
+        {{location.name}} • {{location.address}} • Pittsburgh, PA {{location.zip}}
+
 div(ng-include='"components/footer/footer.html"')
