@@ -28,7 +28,7 @@
             div {{close.address}} • Pittsburgh, PA {{close.zip}}
             span Distance: {{close.distance}} miles
           .col-lg-2.col-md-3
-            button Get Directions
+            a(href="{{close.directionsUrl}}", target="_blank") Get Directions
 
 section.text-message
   .container-fluid

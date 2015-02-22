@@ -52,6 +52,7 @@ angular.module('grubUpClientApp').service('LocationService', [
             var start = new google.maps.LatLng(current[0], current[1]);
             callback(_(locations).map(function (location) {
               location.distance = metersToMiles(distanceBetween(current, [location.lat, location.long])).toFixed(2);
+              location.directionsUrl = self.getDirectionsUrl(current, location.address + ' ' + location.zip);
               return location;
             }).sortBy(function(location) {
               return location.distance;
