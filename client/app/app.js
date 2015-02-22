@@ -18,6 +18,639 @@ angular.module('grubUpClientApp', [
 }).run(function($httpBackend) {
   $httpBackend.whenGET(/.*\.html|.*googleapis.*/).passThrough();
 
+  $httpBackend.whenGET('menu').respond([
+    {
+      "date": "6/15/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Personal Pizza, Orange Juice, Fresh Fruit",
+      "snack": "Scrabble Jr. Cheeze Its, Juice"
+    },
+    {
+      "date": "6/15/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Ham Cheese Sandwich, Orange Juice, Fresh Fruit",
+      "snack": "Scrabble Jr. Cheeze Its, Juice"
+    },
+    {
+      "date": "6/16/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Bologna Cheese Sandwich, Apple Juice, Mixed Fruit",
+      "snack": "Multigrain Sunchips, Juice"
+    },
+    {
+      "date": "6/16/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Bologna Cheese Sandwich, Apple Juice, Mixed Fruit",
+      "snack": "Multigrain Sunchips, Juice"
+    },
+    {
+      "date": "6/17/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Mini Twin Cheeseburgers, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Animal Crackers, Juice"
+    },
+    {
+      "date": "6/17/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Sandwich, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Animal Crackers, Juice"
+    },
+    {
+      "date": "6/18/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Applesauce Cup",
+      "snack": "Hertzles Pretzels, Juice"
+    },
+    {
+      "date": "6/18/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Applesauce Cup",
+      "snack": "Hertzles Pretzels, Juice"
+    },
+    {
+      "date": "6/19/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Hot Dog on Whole Grain Bun, Apple Juice, Baby Carrots + Dip",
+      "snack": "Whole Grain Muffin Tops, Juice"
+    },
+    {
+      "date": "6/19/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Submarine Sandwich Apple Juice, Baby Carrots + Dip",
+      "snack": "Whole Grain Muffin Tops, Juice"
+    },
+    {
+      "date": "6/22/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Whole Grain Chicken Nuggets, Orange Juice, Cherry Fruit Crescent",
+      "snack": "Strawberry Simply Chex Mix, Juice"
+    },
+    {
+      "date": "6/22/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Ham Cheese Sandwich, Orange Juice, Cherry Fruit Crescent",
+      "snack": "Strawberry Simply Chex Mix, Juice"
+    },
+    {
+      "date": "6/23/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Submarine Sandwich, Orange-Pineapple Juice, Fresh Fruit",
+      "snack": "Cinnamon Graham Crackers, Juice"
+    },
+    {
+      "date": "6/23/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Submarine Sandwich, Orange-Pineapple Juice, Fresh Fruit",
+      "snack": "Cinnamon Graham Crackers, Juice"
+    },
+    {
+      "date": "6/24/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Rib B Que Sandwich, Apple Juice, Celery Sticks + Dip",
+      "snack": "String Cheese, Juice"
+    },
+    {
+      "date": "6/24/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Bologna Cheese Sandwich, Apple Juice, Celery Sticks + Dip",
+      "snack": "String Cheese, Juice"
+    },
+    {
+      "date": "6/25/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Pineapple Fruit Cup",
+      "snack": "Pepperidge Farms Goldfish, Juice"
+    },
+    {
+      "date": "6/25/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Pineapple Fruit Cup",
+      "snack": "Pepperidge Farms Goldfish, Juice"
+    },
+    {
+      "date": "6/26/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Grilled Cheese Sandwich, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Bug Bites Graham Crackers, Juice"
+    },
+    {
+      "date": "6/26/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Sandwich, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Bug Bites Graham Crackers, Juice"
+    },
+    {
+      "date": "6/29/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Filled Breadsticks, Apple Juice, Mixed Fruit Cup",
+      "snack": "Whole Grain Granola Bar, Juice"
+    },
+    {
+      "date": "6/29/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Ham Cheese Sandwich, Apple Juice, Mixed Fruit Cup",
+      "snack": "Whole Grain Granola Bar, Juice"
+    },
+    {
+      "date": "6/30/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Fresh Fruit",
+      "snack": "Chocolate Elf Grahams, Juice"
+    },
+    {
+      "date": "6/30/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese Orange Juice, Fresh Fruit",
+      "snack": "Chocolate Elf Grahams, Juice"
+    },
+    {
+      "date": "7/1/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Macaroni & Cheese, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Scrabble Jr. Cheeze Its, Juice"
+    },
+    {
+      "date": "7/1/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Bologna Cheese Sandwich Orange-Pineapple Juice, Peach Cup",
+      "snack": "Scrabble Jr. Cheeze Its, Juice"
+    },
+    {
+      "date": "7/2/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Sandwich, Apple Juice, Baby Carrots + Dip",
+      "snack": "Scooby Doo Graham Snacks, Juice"
+    },
+    {
+      "date": "7/2/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Sandwich, Apple Juice, Baby Carrots + Dip",
+      "snack": "Scooby Doo Graham Snacks, Juice"
+    },
+    {
+      "date": "7/3/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Personal Pizza, Orange Juice, Fresh Fruit",
+      "snack": "Scrabble Jr. Cheeze Its, Juice"
+    },
+    {
+      "date": "7/3/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Ham Cheese Sandwich, Orange Juice, Fresh Fruit",
+      "snack": "Scrabble Jr. Cheeze Its, Juice"
+    },
+    {
+      "date": "7/6/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Bologna Cheese Sandwich, Apple Juice, Mixed Fruit",
+      "snack": "Multigrain Sunchips, Juice"
+    },
+    {
+      "date": "7/6/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Bologna Cheese Sandwich Apple Juice, Mixed Fruit",
+      "snack": "Multigrain Sunchips, Juice"
+    },
+    {
+      "date": "7/7/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Mini Twin Cheeseburgers, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Animal Crackers, Juice"
+    },
+    {
+      "date": "7/7/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Sandwich, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Animal Crackers, Juice"
+    },
+    {
+      "date": "7/8/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Applesauce Cup",
+      "snack": "Hertzles Pretzels, Juice"
+    },
+    {
+      "date": "7/8/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese Orange Juice, Applesauce Cup",
+      "snack": "Hertzles Pretzels, Juice"
+    },
+    {
+      "date": "7/9/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Hot Dog on Whole Grain Bun, Apple Juice, Baby Carrots + Dip",
+      "snack": "Whole Grain Muffin Tops, Juice"
+    },
+    {
+      "date": "7/9/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Submarine Sandwich, Apple Juice, Baby Carrots + Dip",
+      "snack": "Whole Grain Muffin Tops, Juice"
+    },
+    {
+      "date": "7/10/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Whole Grain Chicken Nuggets, Orange Juice, Cherry Fruit Crescent",
+      "snack": "Strawberry Simply Chex Mix, Juice"
+    },
+    {
+      "date": "7/10/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Ham Cheese Sandwich, Orange Juice, Cherry Fruit Crescent",
+      "snack": "Strawberry Simply Chex Mix, Juice"
+    },
+    {
+      "date": "7/13/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Submarine Sandwich, Orange-Pineapple Juice, Fresh Fruit",
+      "snack": "Cinnamon Graham Crackers, Juice"
+    },
+    {
+      "date": "7/13/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Submarine Sandwich, Orange-Pineapple Juice, Fresh Fruit",
+      "snack": "Cinnamon Graham Crackers, Juice"
+    },
+    {
+      "date": "7/14/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Rib B Que Sandwich, Apple Juice, Celery Sticks + Dip",
+      "snack": "String Cheese, Juice"
+    },
+    {
+      "date": "7/14/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Bologna Cheese Sandwich, Apple Juice, Celery Sticks + Dip",
+      "snack": "String Cheese, Juice"
+    },
+    {
+      "date": "7/15/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Pineapple Fruit Cup",
+      "snack": "Pepperidge Farms Goldfish, Juice"
+    },
+    {
+      "date": "7/15/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Pineapple Fruit Cup",
+      "snack": "Pepperidge Farms Goldfish, Juice"
+    },
+    {
+      "date": "7/16/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Grilled Cheese Sandwich, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Bug Bites Graham Crackers, Juice"
+    },
+    {
+      "date": "7/16/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Sandwich, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Bug Bites Graham Crackers, Juice"
+    },
+    {
+      "date": "7/17/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Filled Breadsticks, Apple Juice, Mixed Fruit Cup",
+      "snack": "Whole Grain Granola Bar, Juice"
+    },
+    {
+      "date": "7/17/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Ham Cheese Sandwich, Apple Juice, Mixed Fruit Cup",
+      "snack": "Whole Grain Granola Bar, Juice"
+    },
+    {
+      "date": "7/20/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Fresh Fruit",
+      "snack": "Chocolate Elf Grahams, Juice"
+    },
+    {
+      "date": "7/20/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Fresh Fruit",
+      "snack": "Chocolate Elf Grahams, Juice"
+    },
+    {
+      "date": "7/21/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Macaroni & Cheese, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Scrabble Jr. Cheeze Its, Juice"
+    },
+    {
+      "date": "7/21/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Bologna Cheese Sandwich, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Scrabble Jr. Cheeze Its, Juice"
+    },
+    {
+      "date": "7/22/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Sandwich, Apple Juice, Baby Carrots + Dip",
+      "snack": "Scooby Doo Graham Snacks, Juice"
+    },
+    {
+      "date": "7/22/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Sandwich, Apple Juice, Baby Carrots + Dip",
+      "snack": "Scooby Doo Graham Snacks, Juice"
+    },
+    {
+      "date": "7/23/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "All American Beef Burger, Orange Juice, Cherry Fruit Crescent",
+      "snack": "Whole Grain Cinnamon Bun, Juice"
+    },
+    {
+      "date": "7/23/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Submarine Sandwich, Orange Juice, Cherry Fruit Crescent",
+      "snack": "Whole Grain Cinnamon Bun, Juice"
+    },
+    {
+      "date": "7/24/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Personal Pizza, Orange Juice, Fresh Fruit",
+      "snack": "Scrabble Jr. Cheeze Its, Juice"
+    },
+    {
+      "date": "7/24/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Ham Cheese Sandwich, Orange Juice, Fresh Fruit",
+      "snack": "Scrabble Jr. Cheeze Its, Juice"
+    },
+    {
+      "date": "7/27/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Bologna Cheese Sandwich, Apple Juice, Mixed Fruit",
+      "snack": "Multigrain Sunchips, Juice"
+    },
+    {
+      "date": "7/27/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Bologna Cheese Sandwich, Apple Juice, Mixed Fruit",
+      "snack": "Multigrain Sunchips, Juice"
+    },
+    {
+      "date": "7/28/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Mini Twin Cheeseburgers, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Animal Crackers, Juice"
+    },
+    {
+      "date": "7/28/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Sandwich, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Animal Crackers, Juice"
+    },
+    {
+      "date": "7/29/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Applesauce Cup",
+      "snack": "Hertzles Pretzels, Juice"
+    },
+    {
+      "date": "7/29/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Applesauce Cup",
+      "snack": "Hertzles Pretzels, Juice"
+    },
+    {
+      "date": "7/30/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Hot Dog on Whole Grain bun, Apple Juice, Baby Carrots + Dip",
+      "snack": "Whole Grain Muffin Top, Juice"
+    },
+    {
+      "date": "7/30/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Submarine Sandwich, Apple Juice, Baby Carrots + Dip",
+      "snack": "Whole Grain Muffin Top, Juice"
+    },
+    {
+      "date": "7/31/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Whole Grain Chicken Nuggets, Orange Juice, Cherry Fruit Crescent",
+      "snack": "Strawberry Simply Chex Mix, Juice"
+    },
+    {
+      "date": "7/31/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Ham Cheese Sandwich, Orange Juice, Cherry Fruit Crescent",
+      "snack": "Strawberry Simply Chex Mix, Juice"
+    },
+    {
+      "date": "8/3/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Submarine Sandwich, Orange-Pineapple Juice, Fresh Fruit",
+      "snack": "Cinnamon Graham Crackers, Juice"
+    },
+    {
+      "date": "8/3/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Submarine Sandwich, Orange-Pineapple Juice, Fresh Fruit",
+      "snack": "Cinnamon Graham Crackers, Juice"
+    },
+    {
+      "date": "8/4/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Rib B Que Sandwich, Apple Juice, Celery Sticks + Dip",
+      "snack": "String Cheese, Juice"
+    },
+    {
+      "date": "8/4/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Bologna Cheese Sandwich, Apple Juice, Celery Sticks + Dip",
+      "snack": "String Cheese, Juice"
+    },
+    {
+      "date": "8/5/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Pineapple Fruit Cup",
+      "snack": "Pepperidge Farms Goldfish, Juice"
+    },
+    {
+      "date": "8/5/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Pineapple Fruit Cup",
+      "snack": "Pepperidge Farms Goldfish, Juice"
+    },
+    {
+      "date": "8/6/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Grilled Cheese Sandwich, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Bug Bites Graham Crackers, Juice"
+    },
+    {
+      "date": "8/6/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Sandwich, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Bug Bites Graham Crackers, Juice"
+    },
+    {
+      "date": "8/7/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Filled Breadsticks, Apple Juice, Mixed Fruit Cup",
+      "snack": "Whole Grain Granola Bar, Juice"
+    },
+    {
+      "date": "8/7/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Ham Cheese Sandwich, Apple Juice, Mixed Fruit Cup",
+      "snack": "Whole Grain Granola Bar, Juice"
+    },
+    {
+      "date": "8/10/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Fresh Fruit",
+      "snack": "Chocolate Elf Grahams, Juice"
+    },
+    {
+      "date": "8/10/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "PB & J Sandwich, String Cheese, Orange Juice, Fresh Fruit",
+      "snack": "Chocolate Elf Grahams, Juice"
+    },
+    {
+      "date": "8/11/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Macaroni & Cheese, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Scrabble Jr. Cheeze Its, Juice"
+    },
+    {
+      "date": "8/11/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Turkey Bologna Cheese Sandwich, Orange-Pineapple Juice, Peach Cup",
+      "snack": "Scrabble Jr. Cheeze Its, Juice"
+    },
+    {
+      "date": "8/12/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Sandwich, Apple Juice, Baby Carrots + Dip",
+      "snack": "Scooby Doo Graham Snacks, Juice"
+    },
+    {
+      "date": "8/12/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Cheese Sandwich, Apple Juice, Baby Carrots + Dip",
+      "snack": "Scooby Doo Graham Snacks, Juice"
+    },
+    {
+      "date": "8/13/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "All American Beef Burger, Orange Juice, Cherry Fruit Crescent",
+      "snack": "Whole Grain Cinnamon Bun, Juice"
+    },
+    {
+      "date": "8/13/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Submarine Sandwich, Orange Juice, Cherry Fruit Crescent",
+      "snack": "Whole Grain Cinnamon Bun, Juice"
+    },
+    {
+      "date": "8/14/2015",
+      "menu_type": "Hot",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "All American Beef Burger, Orange Juice, Cherry Fruit Crescent",
+      "snack": "Whole Grain Cinnamon Bun, Juice"
+    },
+    {
+      "date": "8/14/2015",
+      "menu_type": "Cold",
+      "breakfast": "Reduced Sugar Cereal, Assorted Snack, Juice",
+      "lunch": "Submarine Sandwich, Orange Juice, Cherry Fruit Crescent",
+      "snack": "Whole Grain Cinnamon Bun, Juice"
+    }
+  ]);
+
   $httpBackend.whenGET('meals/location').respond([
     {
       "name": "A.S. Wee Care",
