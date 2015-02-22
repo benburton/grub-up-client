@@ -1,0 +1,53 @@
+.location-popout {
+  color: #ffffff;
+  background: #f47921;
+  position: relative;
+
+  .close-popout {
+    border: 4px solid #ffffff;
+    border-radius: 100px;
+    color: #ffffff;
+    content: '+';
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    -webkit-transform: rotate(45deg);
+
+    i {
+      position: absolute;
+      top: -14px;
+      right: 1px;
+      font-size: 31px;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .address {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &.hidden {
+    width: 0;
+  }
+
+  .address {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hours {
+    text-transform: lowercase;
+  }
+
+}
