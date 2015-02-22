@@ -3,7 +3,7 @@
 angular.module('grubUpClientApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/menus', {
+      .when('/menu', {
         templateUrl: 'app/menu/menu.html',
         controller: 'MenuCtrl'
       });
