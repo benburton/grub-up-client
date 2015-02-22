@@ -28,7 +28,6 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
       });
       LocationService.getCurrent(function success(currentLocation) {
         $scope.current = currentLocation;
-        console.log('set');
       });
     });
 
@@ -67,10 +66,6 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
         $scope.long = long;
       });
     };
-
-    $scope.$watch('locations', function() {
-      console.log($scope.locations.closest);
-    }, true);
 
     $scope.init = function() {
       $scope.setDefaults();
