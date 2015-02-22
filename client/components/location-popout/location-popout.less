@@ -1,4 +1,5 @@
 .location-popout {
+  @shadow: 1px 1px 1px rgba(0,0,0,0.33);
   @color: #ffffff;
   color: @color;
   background: #f47921;
@@ -21,6 +22,7 @@
     width: 30px;
     height: 30px;
     -webkit-transform: rotate(45deg);
+    cursor: pointer;
 
     i {
       position: absolute;
@@ -32,6 +34,14 @@
     &:hover {
       text-decoration: none;
     }
+  }
+
+  .menu-type {
+    @size: 25px;
+    background: url('/assets/images/chef-hat.svg') no-repeat center left;
+    background-size: @size auto;
+    padding-left: @size + 10px;
+    text-shadow: @shadow;
   }
 
   .name {

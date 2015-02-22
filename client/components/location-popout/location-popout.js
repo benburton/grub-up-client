@@ -15,7 +15,7 @@ angular.module('grubUpClientApp').directive('locationPopout', [
       template: [
         "<div class='location-popout'>",
         "  <a class='close-popout' ng-click='close()'><i>+</i></a>",
-        "  <h2>{{location.menu_type}} Menu</h2>",
+        "  <h2 class='menu-type'>{{location.menu_type}} Menu</h2>",
         "  <hr/>",
         "  <h3 class='name'>{{location.name}}</h3>",
         "  <ul class='address'>",
