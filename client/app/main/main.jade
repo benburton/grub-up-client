@@ -18,17 +18,17 @@
     marker(ng-repeat="marker in markers", position="{{marker.position}}", on-click="showLocation(marker, $index)")
 
 .body-container
-  .container-fluid
-    section
+  .container
+    section.near-locations
       .row
         .locations.col-lg-12
-          .col-lg-3
+          .col-lg-3.col-md-3
             h2 Inner City Ministries
-          .col-lg-7
+          .col-lg-7.col-md-6
             span 2643 East Liberty Blvd • Pittsburgh, PA 15206
             br
             span Distance: 1.7mi
-          .col-lg-2
+          .col-lg-2.col-md-3
             button Get Directions
       .row
         .locations.col-lg-12
@@ -42,23 +42,23 @@
             button Get Directions
       .row
         .locations.col-lg-12
-          .col-lg-3
+          .col-lg-3.col-md-3
             h2 Sixth Mt. Zion Church
-          .col-lg-7
+          .col-lg-7.col-md-6
             span 6556 Shetland Avenue • Pittsburgh, PA 15206
             br
             span Distance: 1.7mi
-          .col-lg-2
+          .col-lg-2.col-md-3
             button Get Directions
       .row
         .locations.col-lg-12
-          .col-lg-3
+          .col-lg-3.col-md-3
             h2 Valley View Presbyterian
-          .col-lg-7
+          .col-lg-7.col-md-6
             span 604 N. Aiken Avenue • Pittsburgh, PA 15206
             br
             span Distance: 1.7mi
-          .col-lg-2
+          .col-lg-2.col-md.3
             button Get Directions
       .row
         .locations.col-lg-12
@@ -75,13 +75,17 @@ section.text-message
     .row
       .col-lg-8.col-lg-offset-2
         img.phone-icon(src='assets/images/phone-icon.svg', alt="Phone icon")
-        h3 Text Menu to "78945" to receive today's menu for your location
+        h3 Text Menu to "78945" to receive today's menu for your location!
 footer
   .container
     .row
       .col-lg-12
-        span Main Office
-        br
-        span 5344 Second Ave.
-        br
-        span 412-422-6401
+        img.cp-logo(src='assets/images/citiparks-logo.svg', alt="Citiparks Logo")
+        p
+          span Main Office:
+          br
+          span 412.422.6401
+        p
+          span 5344 Second Ave.
+          br
+          span Pittsburgh, PA 15207
