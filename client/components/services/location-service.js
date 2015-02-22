@@ -37,6 +37,9 @@ angular.module('grubUpClientApp').service('LocationService', [
 
       this.getClosest = function(callback, n) {
         var self = this;
+        function metersToMiles(meters) {
+          return meters * 0.000621371;
+        }
         function distanceBetween(one, two) {
           var oneLatLng = new google.maps.LatLng(one[0], one[1]);
           var twoLatLng = new google.maps.LatLng(two[0], two[1]);
@@ -48,7 +51,7 @@ angular.module('grubUpClientApp').service('LocationService', [
           self.getCurrent(function(current) {
             var start = new google.maps.LatLng(current[0], current[1]);
             callback(_(locations).map(function (location) {
-              location.distance = distanceBetween(current, [location.lat, location.long]);
+              location.distance = metersToMiles(distanceBetween(current, [location.lat, location.long])).toFixed(2);
               return location;
             }).sortBy(function(location) {
               return location.distance;
