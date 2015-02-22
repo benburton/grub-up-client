@@ -8,6 +8,7 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
   function($rootScope, $scope, $timeout, LocationService) {
 
     $rootScope.showSearch = true;
+    $rootScope.location = {};
 
     var defaultCoords = [40.44, -79.95];
 
@@ -34,11 +35,11 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
       });
     });
 
-    $scope.$watch('zip', function(val) {
-      if (_.isEmpty(val)) {
+    $scope.$on('locationChange', function(event, data) {
+      if (_.isEmpty(data.zip)) {
         $scope.setDefaults();
       } else {
-        $scope.geoCode(val);
+        $scope.geoCode(data.zip);
       }
     });
 
