@@ -5,11 +5,12 @@ angular.module('grubUpClientApp').service('LocationService', [
   function($http) {
     var geocoder = new google.maps.Geocoder();
     var directionsService = new google.maps.DirectionsService();
-    var current;
+    var current, locations;
 
     function LocationService() {
 
       this.getCurrent = function(success, failure) {
+        failure = failure || function() {};
         if (current) {
           success(current);
         } else if (navigator.geolocation) {
@@ -24,8 +25,39 @@ angular.module('grubUpClientApp').service('LocationService', [
       };
 
       this.getLocations = function(callback) {
-        $http({method: 'GET', url: 'meals/location'}).success(function(data) {
-          callback(data);
+        if (locations) {
+          callback(locations);
+        } else {
+          $http({method: 'GET', url: 'meals/location'}).success(function(data) {
+            locations = data;
+            callback(locations);
+          });
+        }
+      };
+
+      this.getClosest = function(callback, n) {
+        var self = this;
+        function metersToMiles(meters) {
+          return meters * 0.000621371;
+        }
+        function distanceBetween(one, two) {
+          var oneLatLng = new google.maps.LatLng(one[0], one[1]);
+          var twoLatLng = new google.maps.LatLng(two[0], two[1]);
+          return google.maps.geometry.spherical.computeDistanceBetween(oneLatLng, twoLatLng);
+        }
+        n = n || 5;
+
+        self.getLocations(function(locations) {
+          self.getCurrent(function(current) {
+            var start = new google.maps.LatLng(current[0], current[1]);
+            callback(_(locations).map(function (location) {
+              location.distance = metersToMiles(distanceBetween(current, [location.lat, location.long])).toFixed(2);
+              location.directionsUrl = self.getDirectionsUrl(current, location.address + ' ' + location.zip);
+              return location;
+            }).sortBy(function(location) {
+              return location.distance;
+            }).take(n).value());
+          });
         });
       };
 

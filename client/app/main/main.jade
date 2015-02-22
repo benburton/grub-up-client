@@ -1,30 +1,19 @@
-.header-container.container
-  .header-row
-    .col-xs-12.col-sm-8.col-lg-3.col-md-6.logo
-      h1
-        img.logo(src='assets/images/logo.svg', alt="#grubup")
-    .col-xs-9.search
-      input.search-field(type='text', placeholder='zip code', ng-model-options="{ debounce: 500 }", ng-model='zip')
-      nav
-        ul
-          li  
-            a location
-          li
-            a menu
+div(ng-include='"components/header/header.html"')
 
 #hero-map
   location-popout(location='selectedLocation', class="{{popoutClass}}")
   map.map(center="[{{lat}}, {{long}}]", zoom="13", scrollwheel="false", draggable="{{draggable}}", class="{{mapClass}}")
     marker(ng-repeat="marker in markers", position="{{marker.position}}", on-click="showLocation(marker, $index)")
 
-.body-container
+.body-container(ng-show='locations.closest.length != 0')
   .container
     section.near-locations
-      .row
+      .row(ng-repeat='close in locations.closest')
         .locations.col-lg-12
           .col-lg-3.col-md-3
-            h2 Inner City Ministries
+            h2 {{close.name}}
           .col-lg-7.col-md-6
+<<<<<<< HEAD
             span.adr 2643 East Liberty Blvd • Pittsburgh, PA 15206
             br
             span.dstnc Distance: 1.7mi
@@ -70,12 +59,20 @@
             span.dstnc Distance: 1.8mi
           .col-lg-2
             button Get Directions
+=======
+            div {{close.address}} • Pittsburgh, PA {{close.zip}}
+            span Distance: {{close.distance}} miles
+          .col-lg-2.col-md-3
+            a(href="{{close.directionsUrl}}", target="_blank") Get Directions
+
+>>>>>>> bdc991eae13dbff38435242bce01b4a1884f646b
 section.text-message
   .container-fluid
     .row
       .col-lg-8.col-lg-offset-2
         img.phone-icon(src='assets/images/phone-icon.svg', alt="Phone icon")
         h3 Text Menu to "78945" to receive today's menu for your location!
+<<<<<<< HEAD
 footer
   .container
     .row
@@ -92,3 +89,7 @@ footer
         .col-lg-8
           label Send Us Your Questions:
           textarea(rows="8" cols="75")
+=======
+
+div(ng-include='"components/footer/footer.html"')
+>>>>>>> bdc991eae13dbff38435242bce01b4a1884f646b

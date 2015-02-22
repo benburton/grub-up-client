@@ -9,8 +9,7 @@ angular.module('grubUpClientApp', [
   'ngMockE2E',
   'ngMap'
 ]).config(function ($routeProvider, $locationProvider) {
-  $routeProvider
-    .otherwise({
+  $routeProvider.otherwise({
       redirectTo: '/'
     });
 

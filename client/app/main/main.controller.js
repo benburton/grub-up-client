@@ -1,10 +1,13 @@
 'use strict';
 
 angular.module('grubUpClientApp').controller('MainCtrl', [
+  '$rootScope',
   '$scope',
   '$timeout',
   'LocationService',
-  function($scope, $timeout, LocationService) {
+  function($rootScope, $scope, $timeout, LocationService) {
+
+    $rootScope.showSearch = true;
 
     var defaultCoords = [40.44, -79.95];
 
@@ -28,7 +31,6 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
       });
       LocationService.getCurrent(function success(currentLocation) {
         $scope.current = currentLocation;
-        console.log('set');
       });
     });
 
@@ -70,6 +72,14 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
 
     $scope.init = function() {
       $scope.setDefaults();
+      $scope.locations = {
+        closest: []
+      };
+      LocationService.getClosest(function(closest) {
+        $scope.$apply(function() {
+          $scope.locations.closest = closest;
+        });
+      });
     };
 
     $scope.init();
