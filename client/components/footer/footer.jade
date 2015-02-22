@@ -2,12 +2,15 @@ footer
   .container
     .row
       .col-lg-12
-        img.cp-logo(src='assets/images/citiparks-logo.svg', alt="Citiparks Logo")
-        p
-          span Main Office:
-          br
-          span 412.422.6401
-        p
-          span 5344 Second Ave.
-          br
-          span Pittsburgh, PA 15207
+        .col-lg-4
+          img.cp-logo(src='assets/images/citiparks-logo.svg', alt="Citiparks Logo")
+          .org
+            h4 Main Office:
+            span.tel 412.422.6401
+          .adr
+            span 5344 Second Ave.
+            br
+            span Pittsburgh, PA 15207
+        .col-lg-8
+          label Send Us Your Questions:
+          textarea(rows="8" cols="75")
