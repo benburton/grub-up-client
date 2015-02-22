@@ -20,11 +20,15 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
     });
 
     LocationService.getLocations(function(locations) {
-      $scope.markers = _.map(locations, function(location, index) {
+      $scope.markers = _.map(locations, function(location) {
         return {
           position: [location.lat, location.long],
           location: location
         };
+      });
+      LocationService.getCurrent(function success(currentLocation) {
+        $scope.current = currentLocation;
+        console.log('set');
       });
     });
 
@@ -37,10 +41,13 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
     });
 
     $scope.showLocation = function(index, data) {
+      var end = data.location.address + ' ' + data.location.zip;
       if ($scope.selectedLocation === data.location) {
         $scope.selectedLocation = undefined;
       } else {
-        $scope.selectedLocation = data.location;
+        $scope.selectedLocation = $scope.current ?
+          _.merge(_.clone(data.location), { directionsUrl: LocationService.getDirectionsUrl($scope.current, end) }) :
+          data.location;
       }
     };
 
@@ -62,7 +69,6 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
     };
 
     $scope.init = function() {
-      $scope.dynMarkers = [];
       $scope.setDefaults();
     };
 

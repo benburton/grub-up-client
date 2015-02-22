@@ -1,12 +1,13 @@
 .location-popout {
-  color: #ffffff;
+  @color: #ffffff;
+  color: @color;
   background: #f47921;
   position: relative;
 
   .close-popout {
-    border: 4px solid #ffffff;
+    border: 4px solid @color;
     border-radius: 100px;
-    color: #ffffff;
+    color: @color;
     content: '+';
     position: absolute;
     right: 5px;
@@ -26,6 +27,13 @@
     }
 
     &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .name {
+    a {
+      color: @color;
       text-decoration: none;
     }
   }
