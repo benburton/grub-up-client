@@ -4,11 +4,13 @@
       h1
         a(href='/')
           img.logo(src='assets/images/logo.svg', alt="#grubup")
-    .col-xs-6.col-sm-6.col-md-8.col-lg-9.search
-      input.search-field(type='text', placeholder='zip code', ng-model-options="{ debounce: 500 }", ng-model='zip', ng-show='showSearch')
-      nav
-        ul
-          li
-            a(href='/locations') locations
-          li
-            a(href='/menu') menu
+    .col-xs-6.col-sm-6.col-md-8.col-lg-9.search(ng-show='showSearch')
+      input.search-field(type='text', placeholder='zip code', ng-model='zip')
+      button(ng-click='submit()') Submit
+
+    nav
+      ul
+        li
+          a(href='/locations') locations
+        li
+          a(href='/menu') menu
