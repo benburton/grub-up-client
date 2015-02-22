@@ -1,6 +1,8 @@
 @tango: #f37420;
 @yellow: #ffc43a;
 @grey: #a7a9ab;
+@serif: "museo-slab", serif;
+@sans-serif: "petala-pro", sans-serif;
 
 * {
   box-sizing: border-box;
@@ -47,7 +49,7 @@ a {
 }
 
 nav {
-  font-family: "museo-slab",serif;
+  font-family: @serif;
   float: right;
   clear: right;
   margin-top: 10px;
@@ -76,7 +78,7 @@ nav {
 }
 
 .body-container {
-  padding: 20px 0;
+  padding: 20px 0 0 0;
   background-color: @grey;
   color: #ffffff;
   font-size: 20px;
@@ -102,7 +104,22 @@ nav {
   }
 }
 
-
+.text-message {
+  background-color: @yellow;
+  padding: 2em 0;
+  .phone-icon {
+    width: 60px;
+    height: 122px;
+    float: left;
+    margin-right: 2em;
+  }
+  h3 {
+    color: #FFF;
+    font-family: @serif;
+    font-size: 50px;
+    margin-top: 0px;
+  }
+}
 footer {
   padding: 1em 0;
 }
