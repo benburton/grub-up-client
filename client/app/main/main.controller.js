@@ -68,8 +68,20 @@ angular.module('grubUpClientApp').controller('MainCtrl', [
       });
     };
 
+    $scope.$watch('locations', function() {
+      console.log($scope.locations.closest);
+    }, true);
+
     $scope.init = function() {
       $scope.setDefaults();
+      $scope.locations = {
+        closest: []
+      };
+      LocationService.getClosest(function(closest) {
+        $scope.$apply(function() {
+          $scope.locations.closest = closest;
+        });
+      });
     };
 
     $scope.init();
