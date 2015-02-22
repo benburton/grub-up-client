@@ -1,0 +1,73 @@
+.menu {
+
+  font-family: petala-pro, sans-serif;
+
+  .arrow {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    margin-top: 32px;
+    &:hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
+
+  .next {
+    border-left: 10px solid @tango;
+  }
+
+  .previous {
+    border-right: 10px solid @tango;
+  }
+
+  .header {
+    text-align: center;
+    color: @tango;
+
+    .week {
+      color: @yellow;
+    }
+
+    .warning {
+      margin: 15px 0;
+    }
+
+  }
+
+  .section-head {
+    clear: both;
+
+    & > * {
+      text-align: center;
+      background-color: @yellow;
+      color: #ffffff;
+      font-size: 20px;
+    }
+  }
+
+  .week {
+    .day {
+      border-right: 1px solid #b8c5c6;
+      &:last-child {
+        border-right: none;
+      }
+    }
+    .day-of-week {
+      font-weight: bold;
+      font-size: 14px;
+      color: @tango;
+      margin: 5px 0;
+      &:after {
+        content: ':';
+      }
+    }
+    .menu-items {
+      color: #b8c5c6;
+      margin-bottom: 30px;
+      min-height: 80px;
+    }
+
+  }
+}

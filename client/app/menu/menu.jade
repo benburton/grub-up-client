@@ -1,7 +1,37 @@
 div(ng-include='"components/header/header.html"')
 
-.container
-  .col-xs-12
-    h1(style='margin: 60px 0') Aren't menus <em>great?!</em>
+.menu.container
+  .col-xs-1.col-xs-offset-1
+    .arrow.previous.pull-right(ng-click='previous()', ng-show='hasPrevious()')
+  .col-xs-8.header
+    h1 Grub Up Menu: <span class='week'>{{weekHeader(menuIndex)}}</span>
+    .warning
+      * Please check locations for menu availability
+  .col-xs-1
+    .arrow.next.pull-left(ng-click='next()', ng-show='hasNext()')
+
+  .section-head
+    .col-xs-offset-1.col-xs-10 breakfast
+    .col-xs-1.hidden
+  .week
+    .day.col-xs-2(class="{{$index == 0 ? 'col-xs-offset-1' : ''}}", ng-repeat="day in menus[menuIndex]")
+      .day-of-week {{dayFor($index)}}
+      .menu-items {{day.breakfast}}
+
+  .section-head
+    .col-xs-offset-1.col-xs-10 lunch
+    .col-xs-1.hidden
+  .week
+    .day.col-xs-2(class="{{$index == 0 ? 'col-xs-offset-1' : ''}}", ng-repeat="day in menus[menuIndex]")
+      .day-of-week {{dayFor($index)}}
+      .menu-items {{day.lunch}}
+
+  .section-head
+    .col-xs-offset-1.col-xs-10 snack
+    .col-xs-1.hidden
+  .week
+    .day.col-xs-2(class="{{$index == 0 ? 'col-xs-offset-1' : ''}}", ng-repeat="day in menus[menuIndex]")
+      .day-of-week {{dayFor($index)}}
+      .menu-items {{day.snack}}
 
 div(ng-include='"components/footer/footer.html"')
